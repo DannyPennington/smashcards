@@ -16,6 +16,68 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `characters`
+--
+
+DROP TABLE IF EXISTS `characters`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `characters` (
+  `char_ID` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) NOT NULL,
+  `HP` int NOT NULL,
+  `ATK` int NOT NULL,
+  `DEF` int NOT NULL,
+  `SPD` int NOT NULL,
+  PRIMARY KEY (`char_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `characters`
+--
+
+LOCK TABLES `characters` WRITE;
+/*!40000 ALTER TABLE `characters` DISABLE KEYS */;
+INSERT INTO `characters` VALUES (1,'Fox',100,50,30,90);
+/*!40000 ALTER TABLE `characters` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `teams`
+--
+
+DROP TABLE IF EXISTS `teams`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `teams` (
+  `user_ID` int NOT NULL,
+  `char_ID1` int NOT NULL,
+  `char_ID2` int NOT NULL,
+  `char_ID3` int NOT NULL,
+  `team_name` varchar(30) NOT NULL,
+  KEY `user_ID` (`user_ID`),
+  KEY `char_ID1` (`char_ID1`),
+  KEY `char_ID2` (`char_ID2`),
+  KEY `char_ID3` (`char_ID3`),
+  CONSTRAINT `teams_ibfk_1` FOREIGN KEY (`user_ID`) REFERENCES `users` (`user_ID`),
+  CONSTRAINT `teams_ibfk_2` FOREIGN KEY (`char_ID1`) REFERENCES `characters` (`char_ID`),
+  CONSTRAINT `teams_ibfk_3` FOREIGN KEY (`char_ID2`) REFERENCES `characters` (`char_ID`),
+  CONSTRAINT `teams_ibfk_4` FOREIGN KEY (`char_ID3`) REFERENCES `characters` (`char_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `teams`
+--
+
+LOCK TABLES `teams` WRITE;
+/*!40000 ALTER TABLE `teams` DISABLE KEYS */;
+INSERT INTO `teams` VALUES (1,1,1,1,'test name');
+/*!40000 ALTER TABLE `teams` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `users`
 --
 
@@ -52,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-13 16:45:42
+-- Dump completed on 2020-02-13 17:01:51
