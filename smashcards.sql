@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -30,7 +30,7 @@ CREATE TABLE `characters` (
   `DEF` int NOT NULL,
   `SPD` int NOT NULL,
   PRIMARY KEY (`char_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `characters` (
 
 LOCK TABLES `characters` WRITE;
 /*!40000 ALTER TABLE `characters` DISABLE KEYS */;
-INSERT INTO `characters` VALUES (1,'Fox',100,50,30,90);
+INSERT INTO `characters` VALUES (1,'Mario',170,60,60,60),(2,'Luigi',170,60,50,70),(3,'Donkey Kong',190,60,80,20),(4,'Link',175,60,70,40),(5,'Samus',185,55,80,30),(6,'Yoshi',185,55,70,40),(7,'Kirby',115,80,50,80),(8,'Fox',130,80,45,95),(9,'Pikachu',140,70,50,90),(10,'Jigglypuff',120,140,20,60),(11,'Captain Falcon',175,40,40,100),(12,'Ness',150,70,70,70),(13,'Peach',150,70,80,60),(14,'Bowser',200,50,90,10),(15,'Dr Mario',170,50,70,60),(16,'Zelda',150,40,60,60),(17,'Sheik',150,80,50,80),(18,'Young Link',145,50,70,50),(19,'Ganondorf',185,100,60,30),(20,'Falco',140,90,50,80),(21,'Pichu',110,120,20,80),(22,'Mewtwo',145,70,60,60),(23,'Ice Climbers',145,60,50,50),(24,'Marth',145,90,40,80),(25,'Roy',145,80,60,60),(26,'Mr. Game & Watch',120,70,40,70);
 /*!40000 ALTER TABLE `characters` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -114,4 +114,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-13 17:01:51
+-- Dump completed on 2020-02-20 14:54:09
