@@ -1,0 +1,38 @@
+<html>
+	<head>
+	<style>
+		body { background-color: powderblue;}
+		h1 { color: blue; font-family: verdana;}
+		p { color: green;}
+		ul {
+			list-style-type: none;
+			margin: 10;
+			padding: 10;
+			width: 200px;
+			background-color: powderblue;
+		}
+		li a {
+			display: block;
+			color: white;
+			padding: 8px 16px;
+			text-decoration: none;
+			font-family: verdana;
+		}
+		li a:hover {
+			background-color: purple;
+			color: white;
+		}
+	</style>
+	<ul>
+		<li><a href="/home">Home</a></li>
+
+	{% block head_content %}{% endblock %}
+
+	</head>
+
+	<body>
+
+		{% block body_content %}{% endblock %}
+	
+	</body>
+</html>
