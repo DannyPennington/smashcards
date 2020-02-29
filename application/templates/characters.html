@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+<html>
+{% block head_content %}
+{% endblock %}
+{% block body_content %}
+	<table style="font-family: verdana; margin-left: 170px;margin-top: 25px">
+		<tr>
+			<th>Name</th>
+			<th>Hit Points</th>
+			<th>Attack</th>
+			<th>Defence</th>
+			<th>Speed</th>
+		</tr>
+	{% for char in chars %}
+		<tr>
+			<td>{{ char.name }}</td>
+			<td>{{ char.HP }}</td>
+			<td>{{ char.ATK }}</td>
+			<td>{{char.DEF }}</td>
+			<td>{{ char.SPD }} </td>
+		</tr>
+	{% endfor %}
+	</table>
+{% endblock %}
+
+</html>
