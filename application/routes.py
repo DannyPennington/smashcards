@@ -1,11 +1,12 @@
 from flask import render_template
 from application import app
-
+from application.models import Character
 
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template("home.html", title="Home")
+    chars = Character.query.all()
+    return render_template("home.html", title="Home", chars=chars)
 
 @app.route("/about")
 def about():

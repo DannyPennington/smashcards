@@ -3,7 +3,13 @@
 {% block head_content %}
 {% endblock %}
 {% block body_content %}
-	<p style="color: red">Body text here</p>
+	<p style="color: blue">Characters:</p>
+
+	{% for char in chars %}
+		<div>
+			<p>{{ char.name }} {{ char.HP }} {{ char.ATK }} {{char.DEF }} {{ char.SPD }} </p>
+		</div>
+	{% endfor %}
 {% endblock %}
 
 </html>
