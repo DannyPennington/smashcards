@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 {% block body_content %}
-<div class="form">
+<div class="form", style="margin-top: 100px; margin-left: 150px">
 	<form method="POST" action="">
-		{{form.hidden_tag() }}
+		{{ form.hidden_tag() }}
 		<div class="form_group">
 			{{ form.forename.label }}
 			{{ form.forename }}
@@ -33,6 +33,18 @@
 			{% if form.email.errors %}
 				<div class="error">
 					{% for error in form.email.errors %}
+					<span>{{ error }}</span>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+		<br>
+		<div class="form_group">
+			{{ form.username.label }}
+			{{ form.username }}
+			{% if form.username.errors %}
+				<div class="error">
+					{% for error in form.username.errors %}
 					<span>{{ error }}</span>
 					{% endfor %}
 				</div>
